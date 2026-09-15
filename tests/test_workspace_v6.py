@@ -169,8 +169,13 @@ class WorkspaceV6Tests(unittest.TestCase):
         app = make_app([[1, 1, 1]])
         app._write_plena_input_file = mock.Mock()
         original_outlets = app.outlet_cells.copy()
-        with mock.patch.object(gui.simpledialog, "askfloat", return_value=None):
-            app.run_plena()
+        # Cancellation must not depend on a separately installed PLENA binary.
+        with tempfile.TemporaryDirectory() as folder:
+            executable = Path(folder) / "PLENA.exe"
+            executable.touch()  # Never executed: the options dialog is cancelled.
+            with mock.patch.object(gui, "_resource_path", return_value=executable), \
+                 mock.patch.object(gui.simpledialog, "askfloat", return_value=None):
+                app.run_plena()
         app._write_plena_input_file.assert_not_called()
         self.assertEqual(app.outlet_cells, original_outlets)
 

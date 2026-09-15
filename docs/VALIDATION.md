@@ -9,7 +9,7 @@ Package versions and upstream notices: `third_party/dependency_inventory.json`.
 | Check | Result |
 | --- | --- |
 | Original pipenet6 regression baseline | 211 tests passed |
-| Public source tests, including five portability checks | 216 tests passed |
+| Public source tests, including six portability checks | 217 tests passed |
 | Dependency consistency | `pip check`: no broken requirements |
 | Entry point | `fmt.py --help` and `--version` succeeded |
 | Synthetic fill → export → undo | 69 pipe cells, 767 filled cells; no Tk callback errors |
@@ -29,6 +29,12 @@ Scientific algorithms were retained. Source comments, provenance and dependency
 notices were added. Runtime paths and launch configuration were separated;
 implicit searches of personal folders and automatic legacy-data import were
 removed. Internal module/class names and the Korean UI remain largely unchanged.
+
+Fresh-clone inspection caught a broad `dist*` ignore pattern excluding a NumPy
+license, and a legacy cancellation test depending on a locally installed PLENA
+executable. Ignore patterns are now root-anchored; the test uses an inert temporary
+fixture and a separate missing-engine test verifies the error path. The release
+audit now verifies that every inventoried license is actually tracked by Git.
 
 ## Not established by these checks
 

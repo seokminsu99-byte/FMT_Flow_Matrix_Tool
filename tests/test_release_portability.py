@@ -41,6 +41,18 @@ class ReleasePortabilityTests(unittest.TestCase):
             with mock.patch.dict(os.environ, {"FMT_PLENA_EXECUTABLE": str(target)}):
                 self.assertEqual(gui._resource_path("PLENA.exe"), target.resolve())
 
+    def test_missing_plena_reports_error_without_opening_options(self):
+        import gui
+        from test_workspace_v6 import make_app
+        app = make_app([[1, 1, 1]])
+        with tempfile.TemporaryDirectory() as tmp:
+            with mock.patch.object(gui, '_resource_path', return_value=Path(tmp)/'absent.exe'), \
+                 mock.patch.object(gui.messagebox, 'showerror') as error, \
+                 mock.patch.object(gui.simpledialog, 'askfloat') as options:
+                app.run_plena()
+        error.assert_called_once()
+        options.assert_not_called()
+
 
 if __name__ == "__main__":
     unittest.main()

@@ -48,7 +48,7 @@ def main():
             errors.append(f'Missing license text: {package["name"]}')
         for entry in package['license_files']:
             path=ROOT/entry['path']
-            if hashlib.sha256(path.read_bytes()).hexdigest()!=entry['sha256']:
+            if not path.is_file() or hashlib.sha256(path.read_bytes()).hexdigest()!=entry['sha256']:
                 errors.append(f'Changed upstream notice: {entry["path"]}')
             notices+=1
     preserved=[]
@@ -65,6 +65,10 @@ def main():
     if (ROOT/'.git').is_dir():
         result=subprocess.run(['git','ls-files','-z'],cwd=ROOT,check=True,capture_output=True)
         tracked=[x for x in result.stdout.decode().split('\0') if x]
+        for package in inventory['packages']:
+            for entry in package['license_files']:
+                if entry['path'] not in tracked:
+                    errors.append(f'License omitted from Git: {entry["path"]}')
         forbidden={'.exe','.dll','.pt','.pth','.npz','.shp','.shx','.dbf','.xlsx','.docx','.pyc'}
         for name in tracked:
             if Path(name).suffix.lower() in forbidden or name.startswith(('output/','gold_labels/','build/','dist/')):
