@@ -1,0 +1,14 @@
+cff-version: 1.2.0
+message: "Please cite this software and identify the exact commit used in your study."
+type: software
+title: "FMT: Flow Matrix Tool"
+version: 0.1.0
+license: MIT
+repository-code: "https://github.com/seokminsu99-byte/FMT_Flow_Matrix_Tool"
+authors:
+  - family-names: Seok
+    given-names: Minsoo
+abstract: >-
+  Interactive GIS and image-based drainage direction matrix preparation,
+  four-neighbor rasterization, nearest-pipe basin filling, connectivity
+  correction and PLENA input export. Source release derived from pipenet6.
