@@ -4,6 +4,13 @@ FMT is a publication-oriented source copy of pipenet6. Source comments identify
 the libraries used by each module. Dependency license texts are separately
 preserved; citations below describe methods, not permissions to copy code.
 
+The included PLENA C++ source is an unchanged copy of the pinned upstream
+revision recorded in `external/plena/UPSTREAM.json`. Original LICENSE,
+PROVENANCE.md and CITATION.cff accompany it. FMT's project license does not
+replace the component's notices. The manifest records the downloaded bytes;
+the older checksum embedded in the upstream provenance document differs from
+this revision and is retained verbatim, not used as the release checksum.
+
 ## GIS line rasterization
 
 `gis_matrix._bresenham_cells` expresses incremental line rasterization following:

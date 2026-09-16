@@ -2,9 +2,9 @@
 
 FMT converts GIS pipe geometry or raster drawings into editable four-direction
 drainage matrices. It supports LASSO constraints, basin-area filling to nearby
-pipes, connectivity correction, and PLENA input export. This is the public
-research-source successor of **pipenet6**; the GUI retains Korean labels and
-some internal `NFMAT` names for compatibility.
+pipes, connectivity correction, and PLENA input export. The official name is
+**FMT (Flow Matrix Tool)**. Its Python GUI and processing tools are accompanied
+by the PLENA C++17 analysis engine. The GUI retains Korean labels.
 
 This repository supports preparation of research for *Water*. No manuscript
 acceptance, DOI, or field-validation result is implied by this source release.
@@ -66,11 +66,12 @@ Grid resolution, overlapping pipes and compression can alter topology or path
 length. Synthetic tests do not establish real-data direction accuracy or flood
 prediction skill. Report those validations separately in any paper.
 
-## PLENA is a separate project
+## Python interface and C++ engine
 
-The optional engine is [FMT_plug_PLENA](https://github.com/seokminsu99-byte/FMT_plug_PLENA),
-not part of the Python direction-extraction algorithm. This source release does
-not redistribute a prebuilt `PLENA.exe`. Build the pinned upstream source using
+The PLENA C++17 source is included unchanged in `external/plena/src/plena.cpp`.
+Python handles the interface, GIS/image processing and matrix preparation;
+PLENA performs the optional stochastic network analysis as a separate process.
+No prebuilt executable is shipped. Build the included source using
 [these instructions](docs/PLENA.md), then set:
 
 ```powershell
@@ -107,6 +108,7 @@ rotation and GIS LASSO handling. See [validation](docs/VALIDATION.md).
 | `gis_matrix.py`, `gis_project.py`, `crs_support.py`, `crs_catalog.py` | GIS reading, CRS and rasterization |
 | `cell_training.py`, `gold_labels.py`, `ml_image_audit.py`, `synthetic_arrows.py` | Optional ML training and reviewed-label evaluation |
 | `gamma_index.py`, `plena_plots.py`, `run_plena_batch.py` | Structural summaries and external PLENA workflow |
+| `external/plena/src/plena.cpp` | Unmodified PLENA C++17 analysis engine |
 | `tests/`, `qa_*.py`, `scripts/` | Regression tests, synthetic demo and release checks |
 
 Trained weights, training datasets, surveyed GIS, private outputs, executables,
@@ -130,7 +132,7 @@ availability statement. See [AI disclosure](docs/AI_USE.md) and
 
 ## 한국어 안내
 
-원본 pipenet6와 별도로 정리한 공개용 소스입니다. 빈 칸 채우기의 목표는
+공식 명칭은 FMT(Flow Matrix Tool)이며 Python GUI와 PLENA C++ 소스를 함께 제공합니다. 빈 칸 채우기의 목표는
 Outlet이 아니라 가까운 기존 관로이며, 이후 BFS 보정과 PLENA 내보내기는
 별도 단계입니다. 새 사용자 데이터 폴더를 사용하므로 기존 모델·설정을
 자동으로 가져오지 않습니다. 실제 논문 결과 재현에는 해당 입력 자료와

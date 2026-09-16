@@ -5,3 +5,7 @@
 *.json text eol=lf
 *.ps1 text eol=crlf
 third_party/licenses/** -text whitespace=-blank-at-eol,-blank-at-eof
+external/plena/src/plena.cpp -text linguist-vendored=false
+external/plena/LICENSE -text
+external/plena/PROVENANCE.md -text
+external/plena/CITATION.cff -text

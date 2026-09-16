@@ -1,0 +1,11 @@
+{
+  "repository": "https://github.com/seokminsu99-byte/FMT_plug_PLENA",
+  "revision": "cc489c5bc3f365af52b931370ceb27bd57e16838",
+  "modifications": "None; source and original notices copied byte-for-byte.",
+  "files": [
+    {"path": "src/plena.cpp", "sha256": "be80a0f771bfebb06e37a10eaec606a8536f3015ef92cbd8fb1598e844bb265c", "git_blob": "281557c1b511fd33e841f527eaa42355a259991f"},
+    {"path": "LICENSE", "sha256": "5fcc09db220a9482f66d3d7b19859a87c07b714686dedeead5cce44f81db41eb", "git_blob": "c622729ced9372b7c60009e1f2a52c2f85c603ac"},
+    {"path": "PROVENANCE.md", "sha256": "927444d03a8b95bf04137f19bd01fac6fa8bd2654e9ac5fed1168f70493b8efe", "git_blob": "1b02bf65cbdca335f6475ca18699a089a3839dbd"},
+    {"path": "CITATION.cff", "sha256": "9fe2e277792d09930009a417149d346b06a079620057314d6213430128c73db7", "git_blob": "715e1a540c2150b12e7a4af8b9b9400a6e4bd54d"}
+  ]
+}

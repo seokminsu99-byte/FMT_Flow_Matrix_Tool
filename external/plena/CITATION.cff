@@ -1,0 +1,28 @@
+cff-version: 1.2.0
+message: "If you use PLENA, please cite the software and the accompanying article."
+type: software
+title: "PLENA: Program for Large-scale Evaluation of Network Analysis"
+url: "https://github.com/seokminsu99-byte/FMT_plug_PLENA"
+repository-code: "https://github.com/seokminsu99-byte/FMT_plug_PLENA"
+license: "MIT"
+abstract: >-
+  PLENA is a C++17 implementation of a one-parameter Gibbs model for
+  stochastic structural analysis of drainage networks, outlet-referenced
+  width-function calculation, and beta-class estimation using Nash-Sutcliffe
+  efficiency.
+keywords:
+  - urban drainage networks
+  - Gibbs model
+  - stochastic network analysis
+  - width function
+  - computational hydrology
+authors:
+  - family-names: Seok
+    given-names: Minsoo
+    orcid: "https://orcid.org/0009-0009-7282-4950"
+  - family-names: Park
+    given-names: Changmin
+    orcid: "https://orcid.org/0009-0007-0808-4519"
+  - family-names: Seo
+    given-names: Yongwon
+    orcid: "https://orcid.org/0000-0001-5689-2165"

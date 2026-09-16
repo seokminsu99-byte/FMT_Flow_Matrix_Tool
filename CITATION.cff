@@ -11,4 +11,4 @@ authors:
 abstract: >-
   Interactive GIS and image-based drainage direction matrix preparation,
   four-neighbor rasterization, nearest-pipe basin filling, connectivity
-  correction and PLENA input export. Source release derived from pipenet6.
+  correction and PLENA input export, with an included C++ analysis engine.

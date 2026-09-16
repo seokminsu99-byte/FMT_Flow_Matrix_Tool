@@ -16,7 +16,7 @@ The Python repository does not vendor library implementations or wheels.
 | PROJ | https://github.com/OSGeo/PROJ | MIT and bundled notices | Coordinate operations underlying pyproj |
 | CPython / Tkinter | https://docs.python.org/3/license.html | PSF and included terms | Runtime and standard GUI bindings |
 | Tcl/Tk | https://www.tcl-lang.org/software/tcltk/license.html | Tcl/Tk license | Native Tk runtime |
-| PLENA | https://github.com/seokminsu99-byte/FMT_plug_PLENA | MIT; separate authors and provenance | Optional external executable, not bundled |
+| PLENA | https://github.com/seokminsu99-byte/FMT_plug_PLENA | MIT; original notices preserved | Unmodified C++ source and notices in `external/plena`; executable not bundled |
 
 Exact installed versions, transitive dependencies, available package metadata and
 SHA-256 hashes of copied notices are in
